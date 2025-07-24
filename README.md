@@ -10,3 +10,10 @@ All learnings about git and github
 5. git patterns
 6. plumbing
 7. github actions
+
+## Basic workflow
+
+- Initialization and cloning
+- configuration
+- First commit
+- Second commit
