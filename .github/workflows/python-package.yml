@@ -40,5 +40,6 @@ jobs:
     - name: Test with pytest
       run: |
         cd pysim
+        pip install -e .
         echo "Running test!!"
         pytest
