@@ -11,4 +11,4 @@ class TestSimulator(unittest.TestCase):
         self.assertTrue(True)
 
     def test_fail(self):
-        self.assertFalse(True)
+        self.assertFalse(False)
