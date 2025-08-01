@@ -6,3 +6,9 @@ class TestSimulator(unittest.TestCase):
 
     def tearDown(self):
         print("test tearDown!!!")
+
+    def test_pass(self):
+        self.assertTrue(True)
+
+    def test_fail(self):
+        self.assertFalse(True)
