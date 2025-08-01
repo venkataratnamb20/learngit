@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 import os
 
+from typing import Union
+
 from pysim import run_shell
 
-def run_ngspice(netlist: str|None = None, 
-                filename: os.PathLike|None = None):
+def run_ngspice(netlist: Union[str, None] = None, 
+                filename: Union[os.PathLike, None] = None):
     if netlist is not None:
         cmd = """echo "$netlist" | ngspice -s"""
     if filename is not None:
