@@ -1,0 +1,14 @@
+name: Git Actions Basics
+
+on:
+  push:
+    branches: ["actions2602"]
+
+
+jobs:
+  ech:
+    runs-on: ubuntu-latest
+
+    steps:
+      run: |
+        echo "Hello World!"
