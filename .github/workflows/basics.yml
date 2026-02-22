@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - name: bash
         run: |
           echo "Hello World!"
+
+      - name: bash script
+        run: |
+          cd actions2602 && bash welcome.sh
