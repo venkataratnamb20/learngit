@@ -10,5 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      run: |
-        echo "Hello World!"
+      - name: bash
+        run: |
+          echo "Hello World!"
