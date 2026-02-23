@@ -21,11 +21,20 @@ jobs:
         run: |
           print("Python: Hello World!")
         shell: python
-   
-  welcom-from-script:
+  
+  welcom-from-bash-script:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v4
         - name: bash script
           run: |
             cd actions2602 && bash welcome.sh
+  
+  welcom-from-python-script:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: python script
+          run: |
+            cd actions2602 && python basics.py
+            
