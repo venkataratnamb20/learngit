@@ -6,15 +6,26 @@ on:
 
 
 jobs:
-  ech:
+    
+  welcome-from-shell:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
       - name: bash
         run: |
           echo "Hello World!"
-
-      - name: bash script
+    
+  welcome-from-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: python
         run: |
-          cd actions2602 && bash welcome.sh
+          print("Python: Hello World!")
+        shell: python
+   
+  welcom-from-script:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: bash script
+          run: |
+            cd actions2602 && bash welcome.sh
