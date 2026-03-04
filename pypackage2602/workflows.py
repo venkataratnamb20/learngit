@@ -11,3 +11,10 @@ class ParallelAgent:
 
     def run(self):
         return f'name: {self.name}'
+
+class TeamAgent:
+    def __init__(self, name="TeamAgent"):
+        self.name = name
+
+    def run(self):
+        return f'name: {self.name}'
