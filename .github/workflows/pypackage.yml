@@ -2,7 +2,7 @@ name: Build Python package
 
 on:
   push:
-    branches: [ "pyypackage" ]
+    branches: [ "pypackage" ]
     paths:
       - 'pypackage2602/**'
       
