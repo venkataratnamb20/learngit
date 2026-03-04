@@ -5,11 +5,13 @@ on:
     branches: [ "pypackage" ]
     paths:
       - 'pypackage2602/**'
+      - '!.github/workflows/pypackage.yml'
       
   pull_request:
     branches: [ "pypackage" ]
     paths:
       - 'pypackage2602/**'
+      - '!.github/workflows/pypackage.yml'
 
 jobs:
     build:
@@ -19,7 +21,7 @@ jobs:
             - name: Set up Python 3.10
               uses: actions/setup-python@v3
               with:
-                python-version: 3.10
+                python-version: '3.10'
             - name: Install dependencies
               run: |
                 cd pypackage2602
@@ -42,7 +44,7 @@ jobs:
             - name: Set up Python 3.10
               uses: actions/setup-python@v3
               with:
-                python-version: 3.10
+                python-version: '3.10'
             - name: Install dependencies
               run: |
                 cd pypackage2602
