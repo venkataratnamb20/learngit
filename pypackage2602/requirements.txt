@@ -1,0 +1,13 @@
+pytest
+poetry
+pandas
+numpy
+scipy
+seaborn
+matplotlib
+plotly
+openai
+langgraph
+langchain
+langchain-openai
+gradio
