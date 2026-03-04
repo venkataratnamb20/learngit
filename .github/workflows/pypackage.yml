@@ -5,13 +5,13 @@ on:
     branches: [ "pypackage" ]
     paths:
       - 'pypackage2602/**'
-      - '!.github/workflows/pypackage.yml'
+      - '.github/workflows/pypackage.yml'
       
   pull_request:
     branches: [ "pypackage" ]
     paths:
       - 'pypackage2602/**'
-      - '!.github/workflows/pypackage.yml'
+      - '.github/workflows/pypackage.yml'
 
 jobs:
     build:
