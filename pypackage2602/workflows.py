@@ -33,7 +33,7 @@ class FeedbackAgent:
         return {'messages': [_msg]}
     
     def feedback(self, state: State):
-        _msg = state.messages[-1].split(',')[1].strip()  # Extract the input message    
+        _msg = state.messages[-1].split(':')[-1].strip()  # Extract the input message  
         _msg = f'name: FeedbackAgent, feedback: {_msg}'
         return {'messages': [_msg]}
 

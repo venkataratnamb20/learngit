@@ -8,7 +8,9 @@ class TestAgentsFactory(unittest.TestCase):
 
     def test_create_feedback_agent(self):
         agent = self.factory.create_agent("feedback")
-        self.assertEqual(agent.run(), "name: FeedbackAgent")
+        _msg = "name: FeedbackAgent, feedback: Test FeedbackAgent"
+
+        self.assertEqual(agent.run("Test FeedbackAgent"), _msg)
 
     def test_create_parallel_agent(self):
         agent = self.factory.create_agent("parallel")
