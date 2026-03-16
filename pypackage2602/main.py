@@ -13,7 +13,7 @@ def main():
     factory = AgentsFactory()
     agent1 = factory.create_agent("feedback")
     agent2 = factory.create_agent("parallel")
-    print(agent1.run())
+    print(agent1.run('hello!'))
     print(agent2.run())
 
 if __name__ == "__main__":
