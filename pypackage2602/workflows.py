@@ -13,9 +13,11 @@ class FeedbackAgent:
         self._graph = StateGraph(State)
         # self.graph.add_node(START, "start")
         self.graph.add_node("process", self.process)
+        self.graph.add_node("feedback", self.feedback)
         # self.graph.add_node(END, "end")
         self.graph.add_edge(START, "process")
-        self.graph.add_edge("process", END)
+        self.graph.add_edge("process", "feedback")
+        self.graph.add_edge("feedback", END)
     
     @property
     def graph(self):
@@ -27,7 +29,13 @@ class FeedbackAgent:
         return _resp['messages'][-1]
 
     def process(self, state: State):
-        return {'messages': [f'name: {self.name}, input: {state.messages[0]}']}
+        _msg = f'name: ProcessAgent, input: {state.messages[-1]}'
+        return {'messages': [_msg]}
+    
+    def feedback(self, state: State):
+        _msg = state.messages[-1].split(',')[1].strip()  # Extract the input message    
+        _msg = f'name: FeedbackAgent, feedback: {_msg}'
+        return {'messages': [_msg]}
 
 class ParallelAgent:
     def __init__(self, name="ParallelAgent"):
