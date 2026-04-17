@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from langgraph.graph import StateGraph, START, END
 
 from pydantic import BaseModel
@@ -38,8 +40,20 @@ class FeedbackAgent:
         return {'messages': [_msg]}
 
 class ParallelAgent:
-    def __init__(self, name="ParallelAgent"):
-        self.name = name
+    def __init__(self, *nodes, **kwargs):
+        self.name = kwargs.get("name", "ParallelAgent")
+
+        self._graph = StateGraph(State)
+        # self.graph.add_node(START, "start")
+        # self.graph.add_edge(START, nodes[0])
+        prev_node = START
+        for idx, node in enumerate(nodes[1:]):
+            _node_name  = uuid4().hex[:6]
+            self.graph.add_node(_node_name, node)
+            self.graph.add_edge(prev_node, _node_name)
+            prev_node = _node_name
+        
+        # self.graph.add_edge("feedback", END)
 
     def run(self):
         return f'name: {self.name}'
